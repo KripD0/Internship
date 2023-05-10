@@ -10,6 +10,7 @@ public class Palindrome
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите слово.");
         word = scanner.nextLine();
+        scanner.close();
         if (check(word)){
             System.out.println("Слово " + word + " является палиндромом.");
         }
