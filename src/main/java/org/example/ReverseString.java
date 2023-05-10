@@ -6,9 +6,8 @@ public class ReverseString {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String word;
         System.out.println("Введите строку которую хотите развернуть.");
-        word = scanner.nextLine();
+        String word = scanner.nextLine();
         String newWord = reverse(word);
         System.out.println("Получившаяся строка: " + newWord);
     }

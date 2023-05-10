@@ -6,9 +6,8 @@ public class NumericPalindrome {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        long number;
         System.out.println("Введите число.");
-        number = scanner.nextLong();
+        long number = scanner.nextLong();
         scanner.close();
         //Сделал просто вызов метода который проверят строку, а так можно сделать математически.
         if(Palindrome.check(String.valueOf(number))){
