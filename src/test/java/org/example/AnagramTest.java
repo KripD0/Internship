@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 public class AnagramTest extends TestCase {
+
     @Test
     public void testExamination() {
         String firstWordToTest = "Anagram";
@@ -15,5 +16,8 @@ public class AnagramTest extends TestCase {
         assertEquals(firstValueExpected, Anagram.examination(firstWordToTest, secondWordToTest));
         assertEquals(secondValueExpected, Anagram.examination(firstWordToTest, thirdWordToTest));
         assertEquals(thirdValueExpected, Anagram.examination(thirdWordToTest, secondWordToTest));
+    }
+
+    public void testTestExamination() {
     }
 }

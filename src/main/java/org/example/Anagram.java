@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Anagram {
 
     public static void main(String[] args) {
-        examination("bebra", "berar");
+        examination("ananas", "Saaann");
     }
 
     public static int examination(String firstLine, String secondLine){
