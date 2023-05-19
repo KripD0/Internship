@@ -1,5 +1,6 @@
-package org.example;
+package org.example.old;
 
+import org.example.old.OutAllDuplicates;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

@@ -1,5 +1,6 @@
-package org.example;
+package org.example.old;
 
+import org.example.old.UniqueSimbol;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;

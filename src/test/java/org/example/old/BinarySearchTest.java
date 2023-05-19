@@ -1,4 +1,5 @@
-package org.example;
+package org.example.old;
+import org.example.old.BinarySearch;
 import org.junit.Assert;
 import org.junit.Test;
 
