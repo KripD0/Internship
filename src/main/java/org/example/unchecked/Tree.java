@@ -20,13 +20,18 @@ public class Tree {
 
     private Node node;
 
+    private List<Integer> preorderList = new ArrayList<>();
+
+    private List<Integer> postorderList = new ArrayList<>();
+
+    private List<Integer> inorderList = new ArrayList<>();
+
     public static void main(String[] args) {
 
         Tree tree = createTree();
 
         System.out.println("Прямой обход.");
         tree.preorder(tree.node);
-
 
         System.out.println("\nОбратный обход.");
         tree.postorder(tree.node);
@@ -58,32 +63,36 @@ public class Tree {
         return tree;
     }
 
-    public String preorder(Node node) {
+    public Integer preorder(Node node) {
         if (node == null) {
             return null;
         }
 
         System.out.print(node.getValue() + " ");
 
+        preorderList.add(node.getValue());
+
         preorder(node.getLeft());
 
         preorder(node.getRight());
 
-        return "";
+        return node.getValue();
     }
 
-    public String postorder(Node node) {
+    public Integer postorder(Node node) {
         if (node == null) {
-            return "null";
+            return null;
         }
 
         postorder(node.getLeft());
 
         postorder(node.getRight());
 
+        postorderList.add(node.getValue());
+
         System.out.print(node.getValue() + " ");
 
-        return "";
+        return node.getValue();
     }
 
     public String inorder(Node node) {
@@ -94,6 +103,8 @@ public class Tree {
         inorder(node.getLeft());
 
         System.out.print(node.getValue() + " ");
+
+        inorderList.add(node.getValue());
 
         inorder(node.getRight());
 
