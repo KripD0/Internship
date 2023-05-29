@@ -1,4 +1,4 @@
-package org.example.unchecked;
+package org.example.old;
 
 import java.util.ArrayList;
 import java.util.Arrays;

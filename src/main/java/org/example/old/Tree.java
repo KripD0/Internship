@@ -1,4 +1,4 @@
-package org.example.unchecked;
+package org.example.old;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
