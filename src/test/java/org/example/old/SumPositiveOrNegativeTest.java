@@ -1,6 +1,5 @@
 package org.example.old;
 
-import org.example.old.SumPositiveOrNegative;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -20,8 +19,8 @@ class SumPositiveOrNegativeTest {
         int firstExpectedValue = 37;
         int secondExpectedValue = 44;
 
-        Assertions.assertEquals(firstExpectedValue, SumPositiveOrNegative.positiveSum(FIRST_DATA_LIST));
-        Assertions.assertEquals(secondExpectedValue, SumPositiveOrNegative.positiveSum(SECOND_DATA_LIST));
+        assertEquals(firstExpectedValue, SumPositiveOrNegative.positiveSum(FIRST_DATA_LIST));
+        assertEquals(secondExpectedValue, SumPositiveOrNegative.positiveSum(SECOND_DATA_LIST));
     }
 
     @Test
@@ -30,7 +29,7 @@ class SumPositiveOrNegativeTest {
         int firstExpectedValue = -30;
         int secondExpectedValue = -40;
 
-        Assertions.assertEquals(firstExpectedValue, SumPositiveOrNegative.negativeSum(FIRST_DATA_LIST));
-        Assertions.assertEquals(secondExpectedValue, SumPositiveOrNegative.negativeSum(SECOND_DATA_LIST));
+        assertEquals(firstExpectedValue, SumPositiveOrNegative.negativeSum(FIRST_DATA_LIST));
+        assertEquals(secondExpectedValue, SumPositiveOrNegative.negativeSum(SECOND_DATA_LIST));
     }
 }
