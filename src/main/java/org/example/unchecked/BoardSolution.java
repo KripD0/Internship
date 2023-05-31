@@ -17,13 +17,11 @@ public class BoardSolution {
         };
 
         BoardSolution boardSolution = new BoardSolution();
-
         System.out.println(boardSolution.isValidBoard(matrix));
 
     }
 
     public boolean isValidBoard(char[][] board) {
-
         for (int i = 0; i < board.length; i++) {
             if (!isValidRow(board[i])) {
                 return false;
@@ -31,48 +29,33 @@ public class BoardSolution {
         }
 
         for (int i = 0; i < board.length; i++) {
-
             char[] row = new char[board.length];
-
             for (int j = 0; j < board.length; j++) {
-
                 row[j] = board[j][i];
-
             }
 
             if(!isValidRow(row)){
                 return false;
             }
-
         }
-
-
         return true;
     }
 
     public static boolean isValidRow(char[] row) {
-
         boolean[] check = new boolean[row.length + 1];
-
         for (char currentChar : row) {
-
             if (currentChar != '.') {
-
                 if (!Character.isDigit(currentChar)) {
                     return false;
                 }
 
                 int currentDigit = currentChar - '0';
-
                 if (check[currentDigit] || currentDigit > 9 || currentDigit < 1) {
                     return false;
                 }
-
                 check[currentDigit] = true;
-
             }
         }
-
         return true;
     }
 }

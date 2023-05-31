@@ -34,10 +34,7 @@ class BoardSolutionTest {
 
     @Test
     void isValidBoard() {
-
         assertTrue(boardSolution.isValidBoard(FIRST_BOARD));
-
         assertFalse(boardSolution.isValidBoard(SECOND_BOARD));
-
     }
 }

@@ -14,7 +14,10 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             persons.add(PersonCreator.createPerson(10));
         }
-        persons.stream().filter(person -> person != null).filter(person -> person.getAge() > 14).filter(person -> person.getAddress() != null).forEach(System.out::println);
+        persons.stream().filter(person -> person != null)
+                .filter(person -> person.getAge() > 14)
+                .filter(person -> person.getAddress() != null)
+                .forEach(System.out::println);
     }
 }
 
