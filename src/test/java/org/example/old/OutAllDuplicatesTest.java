@@ -1,17 +1,16 @@
 package org.example.old;
 
-import org.example.old.OutAllDuplicates;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OutAllDuplicatesTest {
 
-    public final static Map<String , String> firstMap = new HashMap<>();
-    public final static Map<String , String> secondMap = new HashMap<>();
+    public final static Map<String, String> firstMap = new HashMap<>();
+    public final static Map<String, String> secondMap = new HashMap<>();
 
     static {
         firstMap.put("a", "aa");

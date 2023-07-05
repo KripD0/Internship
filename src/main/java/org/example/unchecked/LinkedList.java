@@ -7,7 +7,7 @@ import lombok.Setter;
 public class LinkedList {
     private Node node;
 
-    public LinkedList(){
+    public LinkedList() {
         this.node = null;
     }
 
@@ -19,7 +19,7 @@ public class LinkedList {
         outputList(reversedList);
     }
 
-    public static Node createList(){
+    public static Node createList() {
         Node node = new Node(8);
         node.setNext(new Node(11));
 
@@ -31,13 +31,13 @@ public class LinkedList {
         return node;
     }
 
-    public static Node reverseList(Node list){
+    public static Node reverseList(Node list) {
 
         Node current = list;
         Node next;
         Node previous = null;
 
-        while (current != null){
+        while (current != null) {
             next = current.next;
             current.setNext(previous);
             previous = current;
@@ -47,11 +47,11 @@ public class LinkedList {
         return previous;
     }
 
-    public static void outputList(Node list){
+    public static void outputList(Node list) {
         System.out.print(list.getValue() + " ");
 
         Node current = list.getNext();
-        while (current != null){
+        while (current != null) {
             System.out.print(current.getValue() + " ");
             current = current.getNext();
         }
@@ -60,13 +60,14 @@ public class LinkedList {
     }
 
 }
+
 @Getter
 @Setter
 class Node {
     Node next;
     int value;
 
-    public Node(int value){
+    public Node(int value) {
         this.value = value;
     }
 }

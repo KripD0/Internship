@@ -1,7 +1,6 @@
 package org.example.old;
 
 import junit.framework.TestCase;
-import org.example.old.Anagram;
 import org.junit.Test;
 
 public class AnagramTest extends TestCase {

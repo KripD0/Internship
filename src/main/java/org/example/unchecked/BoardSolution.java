@@ -34,7 +34,7 @@ public class BoardSolution {
                 row[j] = board[j][i];
             }
 
-            if(!isValidRow(row)){
+            if (!isValidRow(row)) {
                 return false;
             }
         }

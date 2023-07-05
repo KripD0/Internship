@@ -12,12 +12,11 @@ public class SumPositiveOrNegative {
         negativeSum(list);
     }
 
-    public static int positiveSum(List<Integer> list){
-        int result = list.stream().reduce(0, (subtotalElement, element ) -> {
-            if(element > 0){
+    public static int positiveSum(List<Integer> list) {
+        int result = list.stream().reduce(0, (subtotalElement, element) -> {
+            if (element > 0) {
                 return subtotalElement + element;
-            }
-            else{
+            } else {
                 return subtotalElement;
             }
         });
@@ -25,12 +24,11 @@ public class SumPositiveOrNegative {
         return result;
     }
 
-    public static int negativeSum(List<Integer> list){
-        int result = list.stream().reduce(0, (subtotalElement, element ) -> {
-            if(element < 0){
+    public static int negativeSum(List<Integer> list) {
+        int result = list.stream().reduce(0, (subtotalElement, element) -> {
+            if (element < 0) {
                 return subtotalElement + element;
-            }
-            else{
+            } else {
                 return subtotalElement;
             }
         });

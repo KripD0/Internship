@@ -17,18 +17,16 @@ public class BinarySearch {
 
     }
 
-    public static int binarySearch(int[] array, int valueToFind){
+    public static int binarySearch(int[] array, int valueToFind) {
         int lowIndex = 0;
         int highIndex = array.length - 1;
-        while (lowIndex <= highIndex){
+        while (lowIndex <= highIndex) {
             int middleIndex = (lowIndex + highIndex) / 2;
-            if(array[middleIndex] == valueToFind){
+            if (array[middleIndex] == valueToFind) {
                 return middleIndex;
-            }
-            else if (array[middleIndex] < valueToFind){
+            } else if (array[middleIndex] < valueToFind) {
                 lowIndex = middleIndex + 1;
-            }
-            else if (array[middleIndex] > valueToFind){
+            } else if (array[middleIndex] > valueToFind) {
                 highIndex = middleIndex - 1;
             }
         }

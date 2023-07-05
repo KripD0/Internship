@@ -1,5 +1,5 @@
 package org.example.old;
-import org.example.old.BinarySearch;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import java.util.List;
 public class BinarySearchTest {
 
     @Test
-    public void binarySearch(){
+    public void binarySearch() {
         int[] array = new int[]{1, 43, 56, 23, 11, 17, 24, 9, 8, 13, 112, 16, 37};
         Arrays.sort(array);
         List<Integer> expected = new ArrayList<>();

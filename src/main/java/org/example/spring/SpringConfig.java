@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ImportResource;
 public class SpringConfig {
 
     @Bean
-    public FantasticBook fantasticBook(){
+    public FantasticBook fantasticBook() {
         return new FantasticBook();
     }
 

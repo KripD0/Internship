@@ -10,10 +10,9 @@ public class NumericPalindrome {
         long number = scanner.nextLong();
         scanner.close();
         //Сделал просто вызов метода который проверят строку, а так можно сделать математически.
-        if(Palindrome.check(String.valueOf(number))){
+        if (Palindrome.check(String.valueOf(number))) {
             System.out.println("Число " + number + " является палиндромом.");
-        }
-        else {
+        } else {
             System.out.println("Число " + number + " не является палиндромом.");
         }
     }
