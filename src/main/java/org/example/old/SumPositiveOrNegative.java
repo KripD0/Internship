@@ -13,25 +13,17 @@ public class SumPositiveOrNegative {
     }
 
     public static int positiveSum(List<Integer> list) {
-        int result = list.stream().reduce(0, (subtotalElement, element) -> {
-            if (element > 0) {
-                return subtotalElement + element;
-            } else {
-                return subtotalElement;
-            }
-        });
+        int result = list.stream()
+                .filter(current -> current > 0)
+                .reduce(Integer::sum).orElse(0);
         System.out.println(result);
         return result;
     }
 
     public static int negativeSum(List<Integer> list) {
-        int result = list.stream().reduce(0, (subtotalElement, element) -> {
-            if (element < 0) {
-                return subtotalElement + element;
-            } else {
-                return subtotalElement;
-            }
-        });
+        int result = list.stream()
+                .filter(current -> current < 0)
+                .reduce(Integer::sum).orElse(0);
         System.out.println(result);
         return result;
     }
