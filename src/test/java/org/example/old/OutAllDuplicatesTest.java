@@ -2,31 +2,33 @@ package org.example.old;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OutAllDuplicatesTest {
 
-    public final static Map<String, String> firstMap = new HashMap<>();
-    public final static Map<String, String> secondMap = new HashMap<>();
+    public final static List<String> firstList = new ArrayList<>();
+    public final static List<String> secondList = new ArrayList<>();
 
     static {
-        firstMap.put("a", "aa");
-        firstMap.put("b", "aa");
-        firstMap.put("c", "cc");
-        firstMap.put("d", "cc");
-        firstMap.put("f", "ee");
-        firstMap.put("e", "ff");
+        firstList.add("aa");
+        firstList.add("aa");
+        firstList.add("cc");
+        firstList.add("cc");
+        firstList.add("ee");
+        firstList.add("ff");
 
-        secondMap.put("1", "12");
-        secondMap.put("2", "13");
-        secondMap.put("3", "14");
-        secondMap.put("4", "15");
-        secondMap.put("5", "16");
-        secondMap.put("6", "17");
-        secondMap.put("7", "19");
+        secondList.add("12");
+        secondList.add("13");
+        secondList.add("14");
+        secondList.add("15");
+        secondList.add("16");
+        secondList.add("17");
+        secondList.add("19");
     }
 
     @Test
@@ -37,8 +39,8 @@ class OutAllDuplicatesTest {
 
         Map<String, Integer> secondExpected = new HashMap<>();
 
-        assertEquals(firstExpected, OutAllDuplicates.checkDuplicates(firstMap));
-        assertEquals(secondExpected, OutAllDuplicates.checkDuplicates(secondMap));
+        assertEquals(firstExpected, OutAllDuplicates.checkDuplicates(firstList));
+        assertEquals(secondExpected, OutAllDuplicates.checkDuplicates(secondList));
 
     }
 }

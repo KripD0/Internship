@@ -25,8 +25,10 @@ public class Anagram {
         if (firstWord.length != secondWord.length) {
             return false;
         }
+
         Arrays.sort(firstWord);
         Arrays.sort(secondWord);
+
         if (Arrays.equals(firstWord, secondWord)) {
             return true;
         }
@@ -35,6 +37,7 @@ public class Anagram {
 
     public static char[] splitWord(String line) {
         char[] array = new char[line.length()];
+
         for (int i = 0; i < line.length(); i++) {
             array[i] = line.toLowerCase().charAt(i);
         }

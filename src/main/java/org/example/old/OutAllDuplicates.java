@@ -1,6 +1,8 @@
 package org.example.old;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class OutAllDuplicates {
@@ -9,45 +11,27 @@ public class OutAllDuplicates {
         initialize();
     }
 
-
     public static void initialize() {
-        Map<String, String> map = new HashMap<>();
-        map.put("a", "aa");
-        map.put("c", "aa");
-        map.put("d", "aa");
-        map.put("b", "bbb");
-        System.out.println(checkDuplicates(map));
+        List<String> list = new ArrayList<>();
+        list.add("aa");
+        list.add("aa");
+        list.add("aa");
+        list.add("bbb");
+        checkDuplicates(list);
     }
 
-
-    //Почитал про map.merge не понял как его тут использовать, поэтому сделал так.
-    public static Map<String, Integer> checkDuplicates(Map<String, String> map) {
-        Map<String, Integer> duplicates = new HashMap<>();
-
-        //Добавляем в новую мапу ключ-значение из предыдущей, а value - количество повторений.
-        int count = 1;
-        for (String value : map.values()) {
-            if (!duplicates.containsKey(value)) {
-                duplicates.put(value, count);
-            } else {
-                duplicates.put(value, duplicates.get(value) + 1);
-            }
-        }
-        Map<String, Integer> deleteNotDuplicates = new HashMap<>();
-
-        //Добавляем элементы которые нужно удалить в новую мапу.
-        for (String value : duplicates.keySet()) {
-            if (duplicates.get(value) == 1) {
-                deleteNotDuplicates.put(value, duplicates.get(value));
-            }
-        }
-        //Удаляем элементы которые не повторяются.
-        for (String value : deleteNotDuplicates.keySet()) {
-            if (duplicates.get(value) == 1) {
-                duplicates.remove(value);
-            }
+    public static Map<String, Integer> checkDuplicates(List<String> list) {
+        Map<String, Integer> countMap = new HashMap<>();
+        for (String str : list) {
+            countMap.merge(str, 1, Integer::sum);
         }
 
-        return duplicates;
+        for (Map.Entry<String, Integer> current : countMap.entrySet()) {
+            if (current.getValue() > 1) {
+                System.out.println(current.getKey() + " - " + current.getValue());
+            }
+        }
+        countMap.entrySet().removeIf(current -> current.getValue() == 1);
+        return countMap;
     }
 }

@@ -11,18 +11,18 @@ public class BinarySearchTest {
 
     @Test
     public void binarySearch() {
-        int[] array = new int[]{1, 43, 56, 23, 11, 17, 24, 9, 8, 13, 112, 16, 37};
+        long[] array = new long[]{3_520_030_000L, 43, 56, 23, 11, 17, 24, 9, 8, 13, 112, 16, 37};
         Arrays.sort(array);
-        List<Integer> expected = new ArrayList<>();
-        List<Integer> actual = new ArrayList<>();
-        expected.add(1);
-        expected.add(12);
-        expected.add(-1);
-        expected.add(7);
-        actual.add(BinarySearch.binarySearch(array, 8));
-        actual.add(BinarySearch.binarySearch(array, 112));
-        actual.add(BinarySearch.binarySearch(array, 2));
-        actual.add(BinarySearch.binarySearch(array, 23));
+        List<Long> expected = new ArrayList<>();
+        List<Long> actual = new ArrayList<>();
+        expected.add(12L);
+        expected.add(11L);
+        expected.add(-1L);
+        expected.add(6L);
+        actual.add((long) BinarySearch.binarySearch(array, 3_520_030_000L));
+        actual.add((long) BinarySearch.binarySearch(array, 112L));
+        actual.add((long) BinarySearch.binarySearch(array, 2L));
+        actual.add((long) BinarySearch.binarySearch(array, 23L));
         Assert.assertEquals(expected, actual);
     }
 

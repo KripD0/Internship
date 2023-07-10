@@ -7,6 +7,7 @@ public class DeleteDuplicates {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество элементов массива.");
+
         int countVariables = scanner.nextInt();
         int[] array = new int[countVariables];
         System.out.println("Вводите элементы массива.");
@@ -14,6 +15,7 @@ public class DeleteDuplicates {
             array[i] = scanner.nextInt();
         }
         System.out.println("Исходный массив:");
+
         for (int i = 0; i < countVariables; i++) {
             if (i != countVariables - 1) {
                 System.out.print(array[i] + ", ");
@@ -21,6 +23,7 @@ public class DeleteDuplicates {
                 System.out.print(array[i] + ".\n");
             }
         }
+
         int[] deletedArray = deleteDuplicate(array);
         System.out.println("Массив с удаленными дубликатами.");
         for (int i = 0; i < deletedArray.length; i++) {
@@ -33,40 +36,29 @@ public class DeleteDuplicates {
     }
 
     public static int[] deleteDuplicate(int[] array) {
-        int arrayLeght = array.length;
-        int[] deleteIndex = new int[arrayLeght];
-        int countDuplicate = 0;
-        for (int i = 0; i < arrayLeght; i++) {
-            for (int j = i + 1; j < arrayLeght; j++) {
-                if (array[i] == array[j]) {
-                    boolean flag = false;
-                    for (int k = 0; k < countDuplicate; k++) {
-                        if (deleteIndex[k] == j) {
-                            flag = true;
-                        }
-                    }
-                    if (!flag) {
-                        deleteIndex[countDuplicate] = j;
-                        countDuplicate++;
-                    }
-                }
-            }
+        int length = array.length;
+        if (length == 0) {
+            return array;
         }
-        int[] deletedArray = new int[arrayLeght - countDuplicate];
-        int count = 0;
-        for (int i = 0; i < arrayLeght; i++) {
-            boolean flag = false;
-            for (int j = 0; j < countDuplicate; j++) {
-                if (i == deleteIndex[j]) {
-                    flag = true;
+
+        int[] uniqueArray = new int[length];
+        int currentIndex = 0;
+        for (int i = 0; i < length; i++) {
+            boolean isDuplicate = false;
+            for (int j = 0; j < currentIndex; j++) {
+                if (array[i] == uniqueArray[j]) {
+                    isDuplicate = true;
                     break;
                 }
             }
-            if (!flag) {
-                deletedArray[count] = array[i];
-                count++;
+            if (!isDuplicate) {
+                uniqueArray[currentIndex] = array[i];
+                currentIndex++;
             }
         }
-        return deletedArray;
+
+        int[] resultArray = new int[currentIndex];
+        System.arraycopy(uniqueArray, 0, resultArray, 0, currentIndex);
+        return resultArray;
     }
 }

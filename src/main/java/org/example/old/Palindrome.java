@@ -7,6 +7,7 @@ public class Palindrome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите слово.");
+
         String word = scanner.nextLine();
         scanner.close();
         if (check(word)) {

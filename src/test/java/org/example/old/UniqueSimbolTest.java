@@ -3,6 +3,7 @@ package org.example.old;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 
 class UniqueSimbolTest {
@@ -13,9 +14,8 @@ class UniqueSimbolTest {
         String secondLine = "aabbcc";
 
         Character firstExpected = 'e';
-        Character secondExpected = null;
 
         assertEquals(firstExpected, UniqueSimbol.checkCharArray(firstLine));
-        assertEquals(secondExpected, UniqueSimbol.checkCharArray(secondLine));
+        assertNull(UniqueSimbol.checkCharArray(secondLine));
     }
 }
